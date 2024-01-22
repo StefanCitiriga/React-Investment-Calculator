@@ -12,6 +12,9 @@ function App() {
     duration: 10,
   });
 
+  //input should not be valid if duration < 1
+  const inputIsValid = userInput.duration >= 1;
+
   //the "+" in front of newValue ensures it would be treated as a number, not as a string
   function handleChange(inputIdentifier, newValue) {
     setUserInput((prevUserInput) => {
@@ -26,7 +29,8 @@ function App() {
     <>
       <Header />
       <UserInput onChange={handleChange} userInput={userInput} />
-      <Results userInput={userInput} />
+      {!inputIsValid && <h3 className="center">Please enter valid values for the input.</h3>}
+      {inputIsValid && <Results userInput={userInput} />}
     </>
   );
 }
