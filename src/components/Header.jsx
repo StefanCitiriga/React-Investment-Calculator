@@ -1,10 +1,12 @@
-import logo from "../assets/investment-calculator-logo.png"
+import logo from "../assets/investment-calculator-logo.png";
 
 const Header = () => {
-    return <header id="header">
-        <img src={logo}></img>
-        <h1>Investment Calculator</h1>
+  return (
+    <header id="header">
+      <img src={logo}></img>
+      <h1>Investment Calculator</h1>
     </header>
-}
+  );
+};
 
 export default Header;
